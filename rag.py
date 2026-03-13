@@ -1,7 +1,7 @@
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import HuggingFaceInferenceAPIEmbeddings
+from langchain_huggingface import HuggingFaceEndpointEmbeddings
 import os
 
 
@@ -12,9 +12,9 @@ DOCS_DIR = "docs"
 DB_PATH = "vectordb.pkl"
 
 def load_vectorstore():
-    embeddings = HuggingFaceInferenceAPIEmbeddings(
-        api_key=os.getenv("HUGGINGFACEHUB_API_TOKEN"),
-        model_name="sentence-transformers/all-MiniLM-L6-v2"
+    embeddings = HuggingFaceEndpointEmbeddings(
+        model="sentence-transformers/all-MiniLM-L6-v2",
+        huggingfacehub_api_token=os.getenv("HUGGINGFACEHUB_API_TOKEN")
     )
 
     docs = []
