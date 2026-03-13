@@ -9,4 +9,3 @@ faiss-cpu
 pypdf
 python-jose
 pydantic
-langchain-huggingface
