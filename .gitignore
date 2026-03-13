@@ -1,0 +1,4 @@
+.env
+vectordb.pkl
+*.json
+__pycache__/
