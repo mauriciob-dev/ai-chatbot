@@ -118,6 +118,8 @@ SECRET_KEY=your_secret_key_for_jwt
 ```
 
 ---
+## 🌐 Live Demo
+[https://ai-chatbot-production-be05.up.railway.app/](https://ai-chatbot-production-be05.up.railway.app/)
 
 ## 📄 License
 
