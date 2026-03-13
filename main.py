@@ -13,7 +13,7 @@ load_dotenv()
 
 app = FastAPI()
 client = Groq()
-vectorstore = load_vectorstore()
+vectorstore = None
 
 class Message(BaseModel):
     text: str
@@ -26,6 +26,10 @@ def root():
 
 @app.post("/chat")
 def chat(message: Message, request: Request):
+    global vectorstore
+    if vectorstore is None:
+        vectorstore = load_vectorstore()
+
     auth_header = request.headers.get('Authorization', '')
     token = auth_header.replace('Bearer ', '')
     try:
