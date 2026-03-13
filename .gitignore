@@ -2,3 +2,4 @@
 vectordb.pkl
 *.json
 __pycache__/
+*.pyc
